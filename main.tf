@@ -10,9 +10,6 @@ module "cluster_roles"{
     source = ".//modules/cluster-roles"
 }
 
-module "cluster_roles"{
-    source = ".//modules/cluster-roles"
-}
 
 module "roles"{
     source = ".//modules/roles"
