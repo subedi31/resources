@@ -5,5 +5,5 @@ metadata:
   name: pod-reader
 rules:
 - apiGroups: [""]  # "" indicates the core API group
-  resources: {{ .Values.resources | toJson }}
-  verbs: {{ .Values.verbs | toJson }}
+  resources: ["pods"]
+  verbs: ["get", "watch", "list"]
