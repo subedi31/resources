@@ -7,7 +7,7 @@ module "liveness"{
 }
 
 module "cluster_roles"{
-    source = ".//modules/cluster-role"
+    source = ".//modules/cluster-roles"
 }
 
 
