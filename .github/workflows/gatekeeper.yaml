@@ -50,14 +50,11 @@ jobs:
     
     - name: check ClusterRole
       run: |
-        kubectl apply -f ./modules/cluster-roles/helm-cluster_roles/template/cluster_roles.yaml
         kubectl get clusterroles
         
-
-    
     - name: check Roles
       run: |
-        kubectl get roles --namespace feature-namespace
+        kubectl get roles -n feature-namespace
 
       
 

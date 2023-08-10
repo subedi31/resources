@@ -1,9 +1,9 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  name: {{ .Values.name_namespace}}
   name: pod-reader
+  namespace: {{ .Values.name_namespace}}
 rules:
-- apiGroups: [""]  # "" indicates the core API group
+- apiGroups: [""]
   resources: ["pods"]
   verbs: ["get", "watch", "list"]
