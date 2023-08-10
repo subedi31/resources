@@ -6,7 +6,7 @@ module "liveness"{
     source = ".//modules/liveness"
 }
 
-module "cluster roles"{
+module "cluster_roles"{
     source = ".//modules/cluster-roles"
 }
 
