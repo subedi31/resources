@@ -8,7 +8,7 @@ resource "helm_release" "cluster_role_deploy" {
   chart = "./helm-cluster_role"
   name  = "cluster-role-chart"
 
-  values = ("./helm-cluster_role/values.yaml")
+  values = ["./helm-cluster_role/values.yaml"]
 
 }
 
