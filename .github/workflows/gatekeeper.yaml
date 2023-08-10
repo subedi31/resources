@@ -51,10 +51,12 @@ jobs:
     - name: check ClusterRole
       run: |
         kubectl get clusterroles
+        kubectl describe clusterrole role-grantor
+
     
     - name: check Roles
       run: |
-        kubectl get roles --all-namespaces
+        kubectl get roles --namespace feature-namespace
 
       
 
