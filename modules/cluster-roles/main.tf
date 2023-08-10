@@ -10,12 +10,7 @@ resource "helm_release" "cluster_role_deploy" {
 
   values = ("./helm-cluster_role/values.yaml")
 
-  set {
-    name  = "cluster_role_yaml"
-    value = templatefile("./modules/cluster-roles/helm-cluster_role/templates/cluster_roles.yaml", {
-      resource_names = var.resource_names
-    })
-  }
 }
+
 
 
