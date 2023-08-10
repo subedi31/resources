@@ -50,7 +50,7 @@ jobs:
     
     - name: check ClusterRole
       run: |
-        kubectl get clusterrole
+        kubectl get clusterroles
     
     - name: check Roles
       run: |

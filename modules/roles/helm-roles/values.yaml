@@ -1,3 +1,3 @@
-name_namespace: my-namespace
+name_namespace: feature-namespace
 resources: ["pods"]
 verbs: ["get", "watch", "list"]
