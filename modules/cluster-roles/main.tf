@@ -1,5 +1,5 @@
 resource "helm_release" "cluster-template" {
-  chart     = ".//modules/namespace/helm-namespace"
+  chart     = ".//modules/cluster-roles/helm-namespace"
   name      = "cluster-role-chart"
 }
 
