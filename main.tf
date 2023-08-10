@@ -10,6 +10,17 @@ module "cluster_roles"{
     source = ".//modules/cluster-roles"
 }
 
+module "cluster_roles"{
+    source = ".//modules/cluster-roles"
+}
+
+module "roles"{
+    source = ".//modules/roles"
+}
+
+module "cluster_roles"{
+    source = ".//modules/cluster-roles"
+}
 
 # module "k8s-gatekeeper" {
 #     source = ".//modules/k8s-gatekeeper" 
