@@ -10,4 +10,4 @@ rules:
   resources: ["clusterroles"]
   verbs: ["bind"]
   # omit resourceNames to allow binding any ClusterRole
-  resourceNames: {{ .Values.resource_names | toJson }}
+  resourceNames: ["admin", "edit", "view"]
