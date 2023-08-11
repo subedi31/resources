@@ -16,7 +16,7 @@ module "roles"{
 }
 
 module "resource-quota"{
-    source = ".//modules/resorce-quota"
+    source = ".//modules/resource-quota"
 }
 
 
