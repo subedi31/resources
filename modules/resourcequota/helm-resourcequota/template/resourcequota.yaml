@@ -4,9 +4,9 @@ metadata:
   name: pods-high
 spec:
   hard:
-    cpu: "1"
-    memory: "1Gi"
-    pods: "10"
+    cpu: {{ .Values.cpu_limit }}
+    memory: {{ .Values.memory_limit }}
+    pods: {{ .Values.pod_limit }}
   scopeSelector:
     matchExpressions:
     - operator: In

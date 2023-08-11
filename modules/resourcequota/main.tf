@@ -1,4 +1,4 @@
 resource "helm_release" "resourcequota-template" {
-  chart     = ".//modules/resource-quota/helm-resourcequota"
+  chart     = ".//modules/resourcequota/helm-resourcequota"
   name      = "resourcequota-template"
 }
