@@ -6,7 +6,7 @@ module "liveness"{
     source = ".//modules/liveness"
 }
 
-module "cluster_roles"{
+module "cluster-roles"{
     source = ".//modules/cluster-roles"
 }
 
@@ -15,8 +15,8 @@ module "roles"{
     source = ".//modules/roles"
 }
 
-module "resource-quota"{
-    source = ".//modules/resource-quota"
+module "resourcequota"{
+    source = ".//modules/resourcequota"
 }
 
 

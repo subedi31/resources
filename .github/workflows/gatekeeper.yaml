@@ -57,7 +57,7 @@ jobs:
         
     - name: check Roles
       run: |
-        kubectl get roles --namespace feature-namespace
+        kubectl get roles 
 
       
 
