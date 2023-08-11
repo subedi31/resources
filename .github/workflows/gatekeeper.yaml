@@ -38,7 +38,7 @@ jobs:
     
     - name: check resource quota
       run: |
-        kubectl describe quota --namespace feature-namespace
+        kubectl describe quota
 
     - name: check pod liveness
       run: |

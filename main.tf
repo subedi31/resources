@@ -15,6 +15,10 @@ module "roles"{
     source = ".//modules/roles"
 }
 
+module "resource-quota"{
+    source = ".//modules/resorce-quota"
+}
+
 
 
 # module "k8s-gatekeeper" {

@@ -1,0 +1,18 @@
+# resource-quota/resource-quota.yaml
+apiVersion: v1
+kind: List
+items:
+- apiVersion: v1
+  kind: ResourceQuota
+  metadata:
+    name: pods-high
+  spec:
+    hard:
+      cpu: "${cpu_limit}"
+      memory: "${memory_limit}"
+      pods: "${pod_limit}"
+    scopeSelector:
+      matchExpressions:
+      - operator: In
+        scopeName: PriorityClass
+        values: ["high"]
