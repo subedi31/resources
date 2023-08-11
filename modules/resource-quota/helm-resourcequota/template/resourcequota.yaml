@@ -1,6 +1,6 @@
 # resource-quota/resource-quota.yaml
 apiVersion: v1
-kind: List
+kind: Pod
 items:
 - apiVersion: v1
   kind: ResourceQuota
