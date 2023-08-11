@@ -52,7 +52,7 @@ jobs:
     
     - name: check ClusterRole
       run: |
-        kubectl get clusterrole role-grantor
+        kubectl get clusterrole 
 
         
     - name: check Roles
