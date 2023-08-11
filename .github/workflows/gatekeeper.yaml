@@ -38,7 +38,8 @@ jobs:
     
     - name: check resource quota
       run: |
-        kubectl describe quota
+        kubectl describe pod pods-high
+
 
     - name: check pod liveness
       run: |
@@ -50,7 +51,8 @@ jobs:
     
     - name: check ClusterRole
       run: |
-        kubectl get clusterroles
+        kubectl get clusterrole role-grantor
+
         
     - name: check Roles
       run: |
