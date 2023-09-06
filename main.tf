@@ -22,13 +22,13 @@ module "resource-quota"{
     cpu_limit = var.cpu_limit
     memory_limit = var.memory_limit
     request_gpu = var.request_gpu
-    configmaps_quota= var.configmaps_quota
-    persistentvolumeclaims= var.persistentvolumeclaims
-    pods= var.pods
-    replicationcontrollers= var.replicationcontrollers
-    secrets= var.secrets
-    services= var.services
-    services_loadbalancers= var.services_loadbalancers
+    configmaps_quota = var.configmaps_quota
+    persistentvolumeclaims = var.persistentvolumeclaims
+    pods = var.pods
+    replicationcontrollers = var.replicationcontrollers
+    secrets = var.secrets
+    services = var.services
+    services_loadbalancers = var.services_loadbalancers
 }
 
 
