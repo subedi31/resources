@@ -15,7 +15,7 @@ module "roles"{
     source = ".//modules/roles"
 }
 
-module "quota"{
+module "resource-quota"{
     source= ".//modules/resourcequota"
     request_cpu = var.request_cpu
     requests_memory = var.requests_memory
