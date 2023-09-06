@@ -1,3 +1,12 @@
-cpu_limit: "1000"     # Change this to your desired CPU limit value
-memory_limit: "200Gi" # Change this to your desired memory limit value
-pod_limit: "10"       # Change this to your desired pod limit value
+request_cpu: "2"
+requests_memory: "2Gi"
+cpu_limit: "2"
+memory_limit: "2Gi"
+request_gpu: "4"
+configmaps_quota: 10
+persistentvolumeclaims: 4
+pods: 10
+replicationcontrollers: 20
+secrets: 10
+services: 10
+services_loadbalancers: 2
