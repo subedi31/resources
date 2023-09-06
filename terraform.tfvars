@@ -1,5 +1,3 @@
-name_namespace: feature-namespace
-lable_namespace: demo-namespace
 requests_memory = "2Gi"
 cpu_limit = "2"
 memory_limit = "2Gi"
