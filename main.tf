@@ -15,18 +15,16 @@ module "roles"{
     source = ".//modules/roles"
 }
 
-module "resource-quota"{
-    source= ".//modules/resourcequota"
-    request_cpu = var.request_cpu
-    requests_memory = var.requests_memory
-    cpu_limit = var.cpu_limit
-    memory_limit = var.memory_limit
-    request_gpu = var.request_gpu
-    configmaps_quota= var.configmaps_quota
-    persistentvolumeclaims= var.persistentvolumeclaims
-    pods= var.pods
-    replicationcontrollers= var.replicationcontrollers
-    secrets= var.secrets
-    services= var.services
-    services_loadbalancers= var.services_loadbalancers
+module "networkpolicy" {
+  source = ".//modules/networkpolicy"
+  network_namespace = var.network_namespace
+  role = var.role
+  ingress_cidr = var.ingress_cidr
+  ingress_except_cidr = var.ingress_except_cidr
+  project_label = var.project_label
+  role_label = var.role_label
+  ingress_port = var.ingress_port
+  egress_cidr = var.egress_cidr
+  egress_port = var.egress_port
 }
+

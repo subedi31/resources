@@ -1,61 +1,45 @@
-variable "request_cpu"{
-    description= "CPU request quota"
+variable "network_namespace" {
+    description = "Namespace"
     type = string
-    default = "2"
+    default = ""
 }
-
-variable "requests_memory"{
-    description= "Memory Rquest Quota"
+variable "role" {
+    description = "role"
     type = string
-    default = "2Gi"
+    default = ""
 }
-variable "cpu_limit"{
-    description= "CPU Limit"
+variable "ingress_cidr" {
+    description = "cidr for ingress"
     type = string
-    default = "2"
+    default = ""
 }
-variable "memory_limit"{
-    description= "Memory Limit"
+variable "ingress_except_cidr" {
+    description = "cidr except for ingress"
     type = string
-    default = "2Gi"
+    default = ""
 }
-variable "request_gpu"{
-    description= "requests nvidia com gpu"
+variable "project_label" {
+    description = "label for the project"
     type = string
-    default = "4"
+    default = ""
 }
-variable "configmaps_quota"{
-    description= "Quota for configmap"
+variable "role_label" {
+    description = "lable for the role"
     type = string
-    default = "10"
+    default = ""
 }
-variable "persistentvolumeclaims"{
-    description= "Quota for persistentvolumeclaims"
+variable "ingress_port" {
+    description = "Port for ingress"
     type = string
-    default = "4"
+    default = ""
 }
-variable "pods"{
-    description= "Quota for pods"
+variable "egress_cidr" {
+    description = "cidr egress"
     type = string
-    default = "10"
+    default = ""
 }
-variable "replicationcontrollers"{
-    description= "Quota for replicationcontrollers"
+variable "egress_port" {
+    description = "Port for egress"
     type = string
-    default = "20"
-}
-variable "secrets"{
-    description= "Quota for secrets"
-    type = string
-    default = "10"
-}
-variable "services"{
-    description= "Quota for services"
-    type = string
-    default = "10"
-}
-variable "services_loadbalancers"{
-    description= "Quota for services loadbalancers"
-    type = string
-    default = "2"
+    default = ""
 }
