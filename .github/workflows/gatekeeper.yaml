@@ -42,7 +42,7 @@ jobs:
 
     - name: check Network Policy
       run: |
-        kubectl describe networkpolicy network-policy 
+        kubectl describe pod network-policy
 
     
     - name: check ClusterRole
