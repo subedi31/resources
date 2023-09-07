@@ -1,30 +1,35 @@
 module "namespace" {
-    source = ".//modules/namespace" 
+    source = ".//modules/namespace"
+    name_namespace= var.name_namespace
+    label_namespace= var.label_namespace
 }
 
 module "liveness"{
     source = ".//modules/liveness"
 }
+# module "k8s-gatekeeper" {
+#     source = ".//modules/k8s-gatekeeper" 
+# }
 
-module "cluster-roles"{
-    source = ".//modules/cluster-roles"
+module "quota"{
+    source= ".//modules/quotas"
+    request_cpu = var.request_cpu
+    requests_memory = var.requests_memory
+    cpu_limit = var.cpu_limit
+    memory_limit = var.memory_limit
+    request_gpu = var.request_gpu
+    configmaps_quota= var.configmaps_quota
+    persistentvolumeclaims= var.persistentvolumeclaims
+    pods= var.pods
+    replicationcontrollers= var.replicationcontrollers
+    secrets= var.secrets
+    services= var.services
+    services_loadbalancers= var.services_loadbalancers
+}
+module "clusterrole"{
+    source= ".//modules/clusterrole"
 }
 
-
-module "roles"{
-    source = ".//modules/roles"
+module "app"{
+    source= ".//modules/sampleapp"
 }
-
-module "networkpolicy" {
-  source = ".//modules/networkpolicy"
-  network_namespace = var.network_namespace
-  role = var.role
-  ingress_cidr = var.ingress_cidr
-  ingress_except_cidr = var.ingress_except_cidr
-  project_label = var.project_label
-  role_label = var.role_label
-  ingress_port = var.ingress_port
-  egress_cidr = var.egress_cidr
-  egress_port = var.egress_port
-}
-

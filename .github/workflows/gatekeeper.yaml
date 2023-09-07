@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [master]
+    branches: [binod]
 jobs:
   job1:
     runs-on: ubuntu-latest
@@ -24,7 +24,7 @@ jobs:
 
     - name: Terraform Plan
       id: plan
-      run: terraform plan -no-color
+      run: terraform plan -var-file="terraform.tfvars" -no-color
       continue-on-error: false
       
     - name: Terraform Apply
@@ -36,29 +36,39 @@ jobs:
       run: |
         kubectl get namespace
     
-    - name: check resource quota
-      run: |
-        kubectl describe quota
-
-
+    # - name: check resource quota
+    #   run: |
+    #     kubectl describe quota --namespace feature-namespace
 
     - name: check pod liveness
       run: |
-        kubectl describe pod liveness-http
-
-    - name: check Network Policy
+        kubectl describe pod nginx
+    - name: Sleep for 30 seconds
+      run: sleep 30s
+      shell: bash
+    - name: check pod liveness
       run: |
-        kubectl get networkpolicy --namespace feature-namespace
+        kubectl describe pod nginx
+    - name: check quota
+      run: |
+        kubectl get quota
+    - name: check cluster role
+      run: |
+        kubectl get clusterroles
+
+
+
+    # - name: check Network Policy
+    #   run: |
+    #     kubectl get networkpolicy --namespace feature-namespace
     
-    - name: check ClusterRole
-      run: |
-        kubectl get clusterrole 
-
-        
-    - name: check Roles
-      run: |
-        kubectl get roles 
-
+    # - name: check ClusterRole
+    #   run: |
+    #     kubectl get clusterrole
+    
+    # - name: check Roles
+    #   run: |
+    #     kubectl get role --namespace feature-namespace
       
 
     # - name: check pods

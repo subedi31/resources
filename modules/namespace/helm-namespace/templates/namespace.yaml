@@ -3,4 +3,4 @@ kind: Namespace
 metadata:
   name: {{ .Values.name_namespace}}
   labels:
-    name: {{.Values.label_namespace}}
+    name: {{ .Values.label_namespace}}
