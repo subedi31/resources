@@ -1,0 +1,34 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: network-policy
+  namespace: {{ .Values.network_namespace}} 
+spec:
+  podSelector:
+    matchLabels:
+      role: {{ .Values.role}}
+  policyTypes:
+    - Ingress
+    - Egress
+  ingress:
+    - from:
+        - ipBlock:
+            cidr: {{ .Values.ingress_cidr}}
+            except:
+              - {{ .Values.ingress_except-cidr}}
+        - namespaceSelector:
+            matchLabels:
+              project: {{ .Values.project_label}}
+        - podSelector:
+            matchLabels:
+              role: {{ .Values.role_label}}
+      ports:
+        - protocol: TCP
+          port: {{ .Values.ingress_port}}
+  egress:
+    - to:
+        - ipBlock:
+            cidr: {{ .Values.egress_cidr}}
+      ports:
+        - protocol: TCP
+          port: {{ .Values.egress_port}}
